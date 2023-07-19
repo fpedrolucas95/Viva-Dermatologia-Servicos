@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Serviços - Viva! Dermatologia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+        body {
+            font-family: 'Ubuntu', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            min-height: 100vh;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
+        }
+
+        [data-role="collapsibleset"] {
+            margin-bottom: 20px;
+        }
+
+        [data-role="collapsible"] {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        [data-role="collapsible"]:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-role="collapsible"] h3 {
+            font-size: 18px;
+            color: #333;
+            padding: 15px;
+            margin: 0;
+            cursor: pointer;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        [data-role="collapsible"]:hover h3 {
+            background-color: #eee;
+        }
+
+        [data-role="collapsible"] .ui-collapsible-content {
+            padding: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        [data-role="collapsible"]:hover .ui-collapsible-content {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #botao {
+            display: none;
+            position: fixed;
+            bottom: 17px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 400px;
+            height: 50px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #f7f7f7;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #rodape {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        p {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #3D8B40;
+        }
+
+        @media (max-width: 768px) {
+            #botao {
+                display: block;
+            }
+        }
+
+        .subtitulo {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Adicionando a logo -->
+    <img src="/imagem/logo.png" alt="Logo" class="logo">
+    <h2 class="subtitulo">Conheça nossos serviços</h2>
+
+    <div data-role="collapsibleset">
+        <div data-role="collapsible">
+            <h3>Dermatologia</h3>
+            <div data-role="collapsibleset" data-theme="b" data-content-theme="b">
+                <div data-role="collapsible">
+                    <h3>Coolscupting</h3>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 1 Ciclo"> Coolscupting - 1
+                        CICLO</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 2 Ciclos"> Coolscupting - 2
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 3 Ciclos"> Coolscupting - 3
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 4 Ciclos"> Coolscupting - 4
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 5 Ciclos"> Coolscupting - 5
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 6 Ciclos"> Coolscupting - 6
+                        CICLOS</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Procedimento</h3>
+                    <label><input type="checkbox" class="item" data-nome="consulta"> Consulta</label>
+                    <label><input type="checkbox" class="item" data-nome="consulta domiciliar"> Consulta
+                        Domiciliar</label>
+                    <label><input type="checkbox" class="item" data-nome="biopsia de pele"> Biopsia de Pele</label>
+                    <label><input type="checkbox" class="item" data-nome="crioterapia até 10 lesões"> Crioterapia até 10
+                        lesões</label>
+                    <label><input type="checkbox" class="item" data-nome="crioterapia de neoplasia"> Crioterapia de
+                        Neoplasia</label>
+                    <label><input type="checkbox" class="item" data-nome="crioterapia de 10 a 20 lesões ceratoses">
+                        Crioterapia de 10 a 20 lesões (Ceratoses)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="curetagem de molusco contagioso até 10 lesões"> Curetagem de Molusco contagioso
+                        até 10 lesões</label>
+                    <label><input type="checkbox" class="item" data-nome="curetagem e eletrocoagulação de neoplasia">
+                        Curetagem e Eletrocoagulação de Neoplasia</label>
+                    <label><input type="checkbox" class="item" data-nome="sutura silhouete cada fio"> Sutura Silhouete
+                        (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio smooth ou fio liso cada fio"> Fio Smooth
+                        ou Fio Liso (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio canulado liso para olheiras cada fio"> Fio
+                        Canulado Liso para olheiras (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio tuft ou fio fillfer cada fio"> Fio Tuft ou
+                        Fio Fillfer (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio screw ou fio espiralado cada fio"> Fio
+                        Screw ou Fio Espiralado (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio para sobrancelha cada fio"> Fio para
+                        sobrancelha (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio tração para face face fio"> Fio Tração
+                        para face (face fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio tração para pescoço cada fio"> Fio Tração
+                        para pescoço (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="fio tração mold cada fio"> Fio Tração MOLD
+                        (cada fio)</label>
+                    <label><input type="checkbox" class="item" data-nome="eletrocoagulação até 5 lesões">
+                        Eletrocoagulação até 5 lesões</label>
+                    <label><input type="checkbox" class="item" data-nome="eletrocoagulação de 5 a 10 lesões">
+                        Eletrocoagulação de 5 a 10 lesões</label>
+                    <label><input type="checkbox" class="item" data-nome="eletrocoagulaçao de 10-20 lesoes">
+                        Eletrocoagulaçao de 10-20 lesões</label>
+                    <label><input type="checkbox" class="item" data-nome="drenagem de abscesso"> Drenagem de
+                        abscesso</label>
+                    <label><input type="checkbox" class="item" data-nome="exérese de cisto sebáceo lipoma por lesão">
+                        Exérese de Cisto Sebáceo / Lipoma por lesão</label>
+                    <label><input type="checkbox" class="item" data-nome="exerese de cancer de pele"> Exerese de cancer
+                        de pele</label>
+                    <label><input type="checkbox" class="item" data-nome="exérese de névus 1 lesão excisão e sutura">
+                        Exérese de Névus 1 lesão (Excisão e Sutura)</label>
+                    <label><input type="checkbox" class="item" data-nome="exérese de névus 2 lesões excisão e sutura">
+                        Exérese de Névus 2 lesões (Excisão e Sutura)</label>
+                    <label><input type="checkbox" class="item" data-nome="exérese de névus 3 lesões excisão e sutura">
+                        Exérese de Névus 3 lesões (Excisão e Sutura)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="excisão de quelóide infiltração de corticóide"> Excisão de Quelóide + Infiltração
+                        de Corticóide</label>
+                    <label><input type="checkbox" class="item" data-nome="correção de lobo de orelha por orelha">
+                        Correção de lobo de orelha (por orelha)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="infiltração intralesional infiltração de quelóide por sessão"> Infiltração
+                        Intralesional/ Infiltração de quelóide (por sessão)</label>
+                    <label><input type="checkbox" class="item" data-nome="subincisão de cicatriz de acne"> Subincisão de
+                        cicatriz de Acne</label>
+                    <label><input type="checkbox" class="item" data-nome="cirurgia de unha tipo 1 cada unha"> Cirurgia
+                        de unha tipo 1 cada unha</label>
+                    <label><input type="checkbox" class="item" data-nome="cirurgia de unha tipo 2 cada unha"> Cirurgia
+                        de unha tipo 2 cada unha</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="mesoterapia para papada sessão lipo enzimatica de papada"> Mesoterapia para
+                        papada (sessão)- Lipo Enzimatica de papada</label>
+                    <label><input type="checkbox" class="item" data-nome="subincisão de celulite em nádegas"> Subincisão
+                        de Celulite em nádegas</label>
+                    <label><input type="checkbox" class="item" data-nome="peeling químico superficial 2 substâncias">
+                        Peeling Químico Superficial 2 Substâncias</label>
+                    <label><input type="checkbox" class="item" data-nome="peeling combinado cristal ar"> Peeling
+                        Combinado (Cristal + AR)</label>
+                    <label><input type="checkbox" class="item" data-nome="emptiers"> EMPTIERS</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Botox</h3>
+                    <label><input type="checkbox" class="item" data-nome="clube do botox"> Clube do Botox</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica em terço superior da face">
+                        Toxina Botulínica em terço superior da face</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica fronte e glabela 2 áreas">
+                        Toxina Botulínica Fronte e Glabela (2 áreas)</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica somente glabela"> Toxina
+                        Botulínica somente Glabela</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="toxina botulínica somente região periorbitária"> Toxina Botulínica somente região
+                        Periorbitária</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica somente em rugas frontais">
+                        Toxina Botulínica somente em Rugas Frontais</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica hiperidrose mãos ou pés">
+                        Toxina Botulínica Hiperidrose Mãos ou pés</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica pescoço"> Toxina Botulínica
+                        Pescoço</label>
+                    <label><input type="checkbox" class="item" data-nome="toxina botulínica bruxismo ou masseter">
+                        Toxina Botulínica Bruxismo ou masseter</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="toxina botulínica nefertiti contorno mandibular"> Toxina Botulínica Nefertiti
+                        CONTORNO MANDIBULAR</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="toxina botulínica axila couro cabeludo também"> Toxina Botulínica Axila (COURO
+                        CABELUDO TAMBÉM)</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Preenchimento</h3>
+                    <label><input type="checkbox" class="item" data-nome="preenchimento olheira"> Preenchimento
+                        olheira</label>
+                    <label><input type="checkbox" class="item" data-nome="preenchimento labial"> Preenchimento
+                        labial</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="preenchimento com ácido hialurônico-1 seringa"> Preenchimento com Ácido
+                        Hialurônico-1 seringa</label>
+                    <label><input type="checkbox" class="item" data-nome="preenchimento com radiesse - face">
+                        Preenchimento com Radiesse - Face</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="preenchimento com ácido hialurônico 2 seringas"> Preenchimento com Ácido
+                        Hialurônico 2 seringas</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="preenchimento com ácido hialurônico 3 seringas"> Preenchimento com Ácido
+                        Hialurônico 3 seringas</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="preenchimento com ácido hialurônico 4 seringas"> Preenchimento com Ácido
+                        Hialurônico 4 seringas</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="preenchimento com ácido hialurônico 5 seringas"> Preenchimento com Ácido
+                        Hialurônico 5 seringas</label>
+                    <label><input type="checkbox" class="item" data-nome="bioestimulação de colágeno com radiesse">
+                        Bioestimulação de colágeno Com Radiesse</label>
+                    <label><input type="checkbox" class="item" data-nome="preenchimento com radiesse - mãos">
+                        Preenchimento com Radiesse - Mãos</label>
+                    <label><input type="checkbox" class="item" data-nome="restylane vital (1 seringa) skinbooster">
+                        Restylane Vital (1 seringa) SKINBOOSTER</label>
+                    <label><input type="checkbox" class="item" data-nome="sculptra"> Sculptra</label>
+                    <label><input type="checkbox" class="item" data-nome="elleva"> Elleva</label>
+                    <label><input type="checkbox" class="item" data-nome="ellansé"> Ellansé</label>
+                    <label><input type="checkbox" class="item" data-nome="microagulhamento de cicatrizes de acne">
+                        Microagulhamento de cicatrizes de acne</label>
+                    <label><input type="checkbox" class="item" data-nome="microagulhamento de melasma"> Microagulhamento
+                        de melasma</label>
+                    <label><input type="checkbox" class="item" data-nome="microagulhamento para estrias/area">
+                        Microagulhamento para estrias/area</label>
+                    <label><input type="checkbox" class="item" data-nome="tunelização dérmica para ruga fixa">
+                        Tunelização dérmica para ruga fixa</label>
+                    <label><input type="checkbox" class="item" data-nome="tunelização dérmica para cicatrizes">
+                        Tunelização dérmica para cicatrizes</label>
+                    <label><input type="checkbox" class="item" data-nome="aplicação de hialuronidase"> Aplicação de
+                        Hialuronidase</label>
+                    <label><input type="checkbox" class="item" data-nome="preenchimento harmonyca - 1 seringa">
+                        Preenchimento HARMONYCA - 1 Seringa</label>
+                    <label><input type="checkbox" class="item" data-nome="prophilo"> Prophilo</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Ultraformer 3</h3>
+                    <label><input type="checkbox" class="item"
+                            data-nome="combo 3 sessões de ultraformer em terço superior face"> Combo 3 sessões de
+                        Ultraformer em terço superior face</label>
+                    <label><input type="checkbox" class="item" data-nome="terço superior da face"> Terço superior da
+                        face</label>
+                    <label><input type="checkbox" class="item" data-nome="região mãos"> Região mãos</label>
+                    <label><input type="checkbox" class="item" data-nome="face"> Face</label>
+                    <label><input type="checkbox" class="item" data-nome="pescoço"> Pescoço</label>
+                    <label><input type="checkbox" class="item" data-nome="pálpebras inferiores ou olheiras"> Pálpebras
+                        inferiores ou olheiras</label>
+                    <label><input type="checkbox" class="item" data-nome="terço inferior da face e pescoço"> Terço
+                        inferior da face e pescoço</label>
+                    <label><input type="checkbox" class="item" data-nome="terço inferior face e papada"> Terço inferior
+                        face e papada</label>
+                    <label><input type="checkbox" class="item" data-nome="somente papada"> Somente Papada</label>
+                    <label><input type="checkbox" class="item" data-nome="terço inferior da face"> Terço inferior da
+                        face</label>
+                    <label><input type="checkbox" class="item" data-nome="cada folha corporal cada régua"> Cada folha
+                        corporal "CADA RÉGUA"</label>
+                    <label><input type="checkbox" class="item" data-nome="face e pescoço (juntos tem 7%)"> Face e
+                        pescoço (juntos têm 7%)</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Harmony</h3>
+                    <label><input type="checkbox" class="item" data-nome="harmony + lavieen"> Harmony + Lavieen</label>
+                    <label><input type="checkbox" class="item" data-nome="lip face"> Lip Face</label>
+                    <label><input type="checkbox" class="item" data-nome="lip colo"> Lip Colo</label>
+                    <label><input type="checkbox" class="item" data-nome="lip pescoço"> Lip Pescoço</label>
+                    <label><input type="checkbox" class="item" data-nome="lip mãos"> Lip Mãos</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="lip telangiectasias faciais ou melanoses / vascular tip / poucos vasos / poucas melanoses">
+                        Lip Telangiectasias Faciais ou Melanoses / Vascular Tip / Poucos Vasos / Poucas
+                        Melanoses</label>
+                    <label><input type="checkbox" class="item" data-nome="lip muitas telangiectasias ou melanoses"> Lip
+                        muitas telangiectasias ou Melanoses</label>
+                    <label><input type="checkbox" class="item" data-nome="lip braços"> Lip braços</label>
+                    <label><input type="checkbox" class="item" data-nome="lip em face + pescoço"> Lip em face +
+                        pescoço</label>
+                    <label><input type="checkbox" class="item" data-nome="lip em face + pescoço + colo"> Lip em face +
+                        pescoço + colo</label>
+                    <label><input type="checkbox" class="item" data-nome="lip rosácea em face"> Lip rosácea em
+                        face</label>
+                    <label><input type="checkbox" class="item" data-nome="1540 face (fracionado)"> 1540 Face
+                        (Fracionado)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="1540 em estrias de mamas, barriga, braços ou coxas - cada área"> 1540 em Estrias
+                        de Mamas, Barriga, Braços ou Coxas - cada área</label>
+                    <label><input type="checkbox" class="item" data-nome="1540 estrias em nádegas"> 1540 estrias em
+                        nádegas</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="1540 - cicatrizes atróficas - pequenas lesões ou cicatriz única"> 1540 -
+                        Cicatrizes atróficas - pequenas lesões ou cicatriz única</label>
+                    <label><input type="checkbox" class="item" data-nome="1540 - cicatrizes atróficas - lesões maiores">
+                        1540 - Cicatrizes atróficas - lesões maiores</label>
+                    <label><input type="checkbox" class="item" data-nome="face"> Face</label>
+                    <label><input type="checkbox" class="item" data-nome="olheiras"> Olheiras</label>
+                    <label><input type="checkbox" class="item" data-nome="tatuagem- depende do tamanho"> Tatuagem-
+                        depende do tamanho</label>
+                    <label><input type="checkbox" class="item" data-nome="micropigmentação de sobrancelha">
+                        Micropigmentação de sobrancelha</label>
+                    <label><input type="checkbox" class="item" data-nome="micose de unha (por sessão)"> Micose de unha
+                        (por sessão)</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Legacy/Endymed</h3>
+                    <label><input type="checkbox" class="item" data-nome="região periorbital ou perioral"> Região
+                        Periorbital ou Perioral</label>
+                    <label><input type="checkbox" class="item" data-nome="combo região corporal por área (8 sessões)">
+                        Combo Região Corporal por Área (8 sessões)</label>
+                    <label><input type="checkbox" class="item" data-nome="região corporal por área tratada"> Região
+                        Corporal por Área Tratada</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="microagulhamento robotico (tratamento completo)"> Microagulhamento Robótico
+                        (Tratamento Completo)</label>
+                    <label><input type="checkbox" class="item" data-nome="ponteira intensif (tratamento completo)">
+                        Ponteira Intensif (Tratamento Completo)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="combo região periorbital ou perioral (6 sessões)"> Combo Região Periorbital ou
+                        Perioral (6 Sessões)</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>CO2</h3>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento de Face (Padrão)"> CO2 Fracionado -
+                        Dual Deep - Rejuvenescimento de Face (Padrão)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento de Face (Deep)"> CO2 Fracionado -
+                        Dual Deep - Rejuvenescimento de Face (Deep)</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Região Cervical / Pescoço"> CO2 Fracionado - Dual
+                        Deep - Região Cervical / Pescoço</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento Colo"> CO2 Fracionado - Dual Deep -
+                        Rejuvenescimento Colo</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Cicatrizes de Acne"> CO2 Fracionado - Dual Deep -
+                        Cicatrizes de Acne</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento Mãos"> CO2 Fracionado - Dual Deep -
+                        Rejuvenescimento Mãos</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Estrias, Mamas, Braços ou Coxas, Barriga, Costas">
+                        CO2 Fracionado - Dual Deep - Estrias, Mamas, Braços ou Coxas, Barriga, Costas</label>
+                    <label><input type="checkbox" class="item" data-nome="CO2 Fracionado - Dual Deep - Nádegas"> CO2
+                        Fracionado - Dual Deep - Nádegas</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Cicatrizes Atróficas - Pequenas Lesões ou Cicatriz Única">
+                        CO2 Fracionado - Dual Deep - Cicatrizes Atróficas - Pequenas Lesões ou Cicatriz Única</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Cicatrizes Atróficas - Lesões Maiores"> CO2
+                        Fracionado - Dual Deep - Cicatrizes Atróficas - Lesões Maiores</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - CO2 Light / Peeling de CO2 / TIP 400 - Face"> CO2
+                        Fracionado - Dual Deep - CO2 Light / Peeling de CO2 / TIP 400 - Face</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento CO2 Perioral"> CO2 Fracionado -
+                        Dual Deep - Rejuvenescimento CO2 Perioral</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="CO2 Fracionado - Dual Deep - Rejuvenescimento CO2 Periocular"> CO2 Fracionado -
+                        Dual Deep - Rejuvenescimento CO2 Periocular</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Lavieen</h3>
+                    <label><input type="checkbox" class="item" data-nome="Laser Lavieen para Face ou Melasma"> Laser
+                        Lavieen para Face ou Melasma</label>
+                    <label><input type="checkbox" class="item" data-nome="Combo de Lavieen para Face (3 sessões)"> Combo
+                        de Lavieen para Face (3 sessões)</label>
+                    <label><input type="checkbox" class="item" data-nome="Lavieen em micose de unha"> Lavieen em micose
+                        de unha</label>
+                    <label><input type="checkbox" class="item"
+                            data-nome="Lavieen em região corporal (clareamento axilas ou virilha) cada area"> Lavieen em
+                        região corporal (clareamento axilas ou virilha) cada área</label>
+                    <label><input type="checkbox" class="item" data-nome="Colo"> Colo</label>
+                    <label><input type="checkbox" class="item" data-nome="LAVIEEN + PRP"> LAVIEEN + PRP</label>
+                    <label><input type="checkbox" class="item" data-nome="PRP"> PRP</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Plasmage</h3>
+                    <label><input type="checkbox" class="item" data-nome="Região de pálpebras inferior - 1 sessão">
+                        Região de pálpebras inferior - 1 sessão</label>
+                    <label><input type="checkbox" class="item" data-nome="Região de pálpebras superior - 1 sessão">
+                        Região de pálpebras superior - 1 sessão</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>MMP</h3>
+                    <label><input type="checkbox" class="item" data-nome="Queda de cabelo"> Queda de cabelo</label>
+                    <label><input type="checkbox" class="item" data-nome="Melasma"> Melasma</label>
+                    <label><input type="checkbox" class="item" data-nome="Manchas brancas (muitas em perna ou braços)">
+                        Manchas brancas (muitas em perna ou braços)</label>
+                    <label><input type="checkbox" class="item" data-nome="Manchas brancas (poucas em pernas ou braços)">
+                        Manchas brancas (poucas em pernas ou braços)</label>
+                    <label><input type="checkbox" class="item" data-nome="Estrias por região"> Estrias por
+                        região</label>
+                    <label><input type="checkbox" class="item" data-nome="MMP para cicatriz (por cicatriz)"> MMP para
+                        cicatriz (por cicatriz)</label>
+                    <label><input type="checkbox" class="item" data-nome="MMP para barba"> MMP para barba</label>
+                    <label><input type="checkbox" class="item" data-nome="MMP cicatrizes de acne"> MMP cicatrizes de
+                        acne</label>
+                    <label><input type="checkbox" class="item" data-nome="MMP booster"> MMP booster</label>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible">
+            <h3>Corporal</h3>
+            <div data-role="collapsibleset" data-theme="b" data-content-theme="b">
+                <div data-role="collapsible">
+                    <h3>Legacy / Endymed</h3>
+                    <label><input type="checkbox" class="item" data-nome="combo_região_corporal"> Combo região corporal
+                        por área (8 sessões)</label>
+                    <label><input type="checkbox" class="item" data-nome="região_corporal"> Região corporal por área
+                        tratada</label>
+                    <label><input type="checkbox" class="item" data-nome="microagulhamento_robotico"> Microagulhamento
+                        robótico (tratamento completo)</label>
+                    <label><input type="checkbox" class="item" data-nome="ponteria_intensif"> Ponteria Intensif
+                        (tratamento completo)</label>
+                    <label><input type="checkbox" class="item" data-nome="combo_região_periorbital"> Combo região
+                        periorbital ou perioral (6 sessões)</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Coolscupting</h3>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 1 Ciclo"> Coolscupting - 1
+                        CICLO</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 2 Ciclos"> Coolscupting - 2
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 3 Ciclos"> Coolscupting - 3
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 4 Ciclos"> Coolscupting - 4
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 5 Ciclos"> Coolscupting - 5
+                        CICLOS</label>
+                    <label><input type="checkbox" class="item" data-nome="Coolscupting - 6 Ciclos"> Coolscupting - 6
+                        CICLOS</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>CM Slim</h3>
+                    <label><input type="checkbox" class="item" data-nome="CM Slim - 10 sessões"> CM Slim - 10
+                        sessões</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Massagem</h3>
+                    <label><input type="checkbox" class="item" data-nome="Massagem relaxante"> Massagem
+                        relaxante</label>
+                    <label><input type="checkbox" class="item" data-nome="Massagem - drenagem individual"> Drenagem
+                        Individual</label>
+                    <label><input type="checkbox" class="item" data-nome="Massagem - drenagem pacote"> Drenagem
+                        Pacote</label>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Limpeza</h3>
+                    <label><input type="checkbox" class="item" data-nome="Limpeza de Pele"> Limpeza de Pele</label>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible">
+            <h3>Pacotes</h3>
+            <div><label><input type="checkbox" class="item" data-nome="#XÔFLACIDEZ"> #XÔFLACIDEZ</label>
+                <p>1 Sessão de Sculptra +<br>6 Sessões de Endymed (ganhe 2)</p>
+            </div>
+            <div><label><input type="checkbox" class="item" data-nome="#XÔGORDURALOCALIZADA">
+                    #XÔGORDURALOCALIZADA</label>
+                <p>1 Sessão (2 Ciclos) de Coolsculpting +<br>6 Sessões de Endymed ou Legacy (ganhe 2)</p>
+            </div>
+            <div><label><input type="checkbox" class="item" data-nome="#XÔCELULITE"> #XÔCELULITE</label>
+                <p>1 Sessão de Elleva ou Sculptra +<br>6 Sessões de Endymed ou Legacy (ganhe 2)</p>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="botao" class="ui-btn ui-corner-all ui-shadow ui-btn-b" style="display: none;"><i
+            class="fab fa-whatsapp"></i> Saiba mais</a>
+</body>
+<footer>
+    <div id="rodape">
+        <p>Copyright &copy; 2023 - Viva! Dermatologia<br>CNPJ: 10.836.222/0001-00<br>Desenvolvido por <a
+                href="https://www.francadev.com.br" target="_blank">Pedro Lucas França</a></p>
+    </div>
+</footer>
+<script>
+    $(document).ready(function () {
+        $('.item').change(function () {
+            var selecionados = [];
+            $('.item:checked').each(function () {
+                selecionados.push($(this).data('nome'));
+            });
+            if (selecionados.length > 0) {
+                $('#botao').show();
+                var base_url = "https://api.whatsapp.com/send?phone=5561998701065&text=";
+                var texto = "Gostaria de saber mais sobre: " + selecionados.join(', ');
+                var url_final = base_url + encodeURIComponent(texto);
+                $('#botao').attr("href", url_final);
+            } else {
+                $('#botao').hide();
+            }
+        });
+    });
+</script>
+
+</html>
